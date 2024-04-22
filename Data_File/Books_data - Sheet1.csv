@@ -1,0 +1,62 @@
+bid,title,author,category,status
+1,Steve Jobs,Walter Issacson,Biography,issued
+2,Discovery of India,Jawaharlal Nehru,History,issued
+3,My Experiments with Truth,Mahatma Gandhi,Autobiography,issued
+4,Object Oriented Programming with C++,E Balagurusamy,Education,issued
+5,Thinking with type,Ellen Lupton,Arts,issued
+6,The Photographer's,Lindsay Adler,Photography,issued
+7,Think and Grow,Napoleon Hill,Economics,issued
+8,The Fifth Discipline : The Art,Peter M.Senge,Management,issued
+9,A Theory of Justice,John Rawls,Law,issued
+10,Eat to Live,Joel Fuhrman,Health,issued
+11,City of Heavenly Fire,Cassandra Clare,Fiction,available
+12,Da Vinci Code,Dan Brown,Fiction,available
+13,War and Peace,Leo Tolstoy,Philosophical fiction,issued
+14,Python For All,John Shovic,Education,available
+15,Automate The Boring Stuff With Python,Al Sweigart,Education,available
+16,Wings Of Fire,APJ Abdul Kalam,Autobiography,available
+17,Ikigai,Hector Garcia,Personal Development,available
+18,Who Will Cry When You Will Die,Robin Sharma,Personal Development,available
+19,Rich Dad Poor Dad,Robert T. Kiyosaki,Business,available
+20,Immortals of Meluha,Amish Tirpathi,High Fantasy,available
+21,A Brief History Of Time,Stephen Hawking,SPACE,issued
+22,I Know Why The Cage Bird Sings,Maya Anguelo,Story,available
+23,Lord Of Files,William Golding,Fiction,issued
+24,Loara Dune,R. D Blackmore,Fiction,issued
+25,Jamacia Inn,Daphne,Fiction,issued
+26,Kidnapped,Robert Louis,Fiction,available
+27,Treasure Island,Robert Louis,Fiction,available
+28,The Call Of Wild,Jack London,Fiction,available
+29,Charlottes Web,E. B White,Fiction,available
+30,The Wind In Willows,Kenneth Grahame,Fiction,available
+31,Being and Time,Martin Heldegger,Philosophy,available
+32,The Republic,Rocha Pereia,Philosophy,issued
+33,Critique For Pure Reason,Paul Guyer,Philosophy,available
+34,The Prince,Rufus Godwin,Philosophy,available
+35,Ethics,Stuart Hampshire,Philosophy,available
+36,Long Walk To Freedom,Nelson Mandela,Autobiography,available
+37,The Dairy Of Young Girl,Anne Frank,Autobiography,available
+38,Mark Twain,Mark Twain,Autobiography,available
+39,Mein Kampf,Adolf Hitler,Autobiography,available
+40,Freakonomics,Steveb D.Levit,Economics,issued
+41,Thinking Fast and Slow,Daniel Kahneman,Economics,available
+42,Tell You About Capitalism,HA-Joon Chang,Economics,available
+43,Animal Spirits,Akerlof and Shiller,Economics,available
+44,The Black Swan,Nassim Nicholas Taleb,Economics,issued
+45,1984,George Orwell,Story,available
+46,The Lord Of Wings ,J.R.R.Tolken,Story,issued
+47,Kite Runner,Khaled Hosseini,Story,available
+48,Harry Potter,J.K.Rowling,Story,available
+49,The Book Theif,Markus Zusak,Story,available
+50,History Of 20th Century,Martin Gilbert,History,available
+51,"Guns,Germs,and Steel",Jared Daimond,History,issued
+52,A World lit Only by Fire,William Manchestar,History,issued
+53,The Crusades ,Thomas Asbridge,History,available
+54,Over The Edge Of The World,Laurence,History,available
+55,A Beautiful Mind ,Sylvia Nasar,Biography,available
+56,The Enigma,Andrew Hodges,Biography,available
+57,Alexander Hamilton,Ron Chernow,Biography,available
+58,Barracoon,Zora Neale Hurston,Biography,available
+59,CHURCHILL : A Life,MArtin Glibert,Biography,available
+60,A Tale of Two Cities,Charles Dickens,Historical novel,issued
+61,Les Misérables,Victor Hugo,Historical fiction,available
