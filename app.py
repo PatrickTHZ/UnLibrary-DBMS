@@ -1,4 +1,5 @@
-import os, pyodbc
+import os
+import pyodbc
 from azure.identity import DefaultAzureCredential
 from azure.storage.blob import BlobServiceClient
 import io
@@ -36,7 +37,7 @@ class AzureDB():
             self.container_name = container_name
 
         except Exception as ex:
-            print(f"Acessing container {container_name}")
+            print(f"Accessing container {container_name}")
             # Access the container
             self.container_client = self.blob_service_client.get_container_client(container=container_name)
             self.container_name = container_name
@@ -84,8 +85,7 @@ class AzureDB():
     def access_blob_csv(self, blob_name):
         # Read the csv blob from Azure
         try:
-            print(f"Acessing blob {blob_name}")
-
+            print(f"Accessing blob {blob_name}")
             df = pd.read_csv(io.StringIO(self.container_client.download_blob(blob_name).readall().decode('utf-8')))
             return df
         except Exception as ex:
@@ -120,3 +120,68 @@ class AzureDB():
             trans = con.begin()
             con.execute(text(f"DROP TABLE [dbo].[{table_name}]"))
             trans.commit()
+
+    # ETL Methods
+    def etl_user_id(self):
+        print("Starting UserID ETL Process")
+        user_data = self.access_blob_csv("user_data.csv")
+        user_data.columns = [col.strip().lower() for col in user_data.columns]
+        self.upload_dataframe_sqldatabase("user_data", user_data)
+        print("UserID ETL Process completed\n")
+
+    def etl_log_in(self):
+        print("Starting Log In ETL Process")
+        login_data = self.access_blob_csv("authentication_data.csv")
+        login_data['valid'] = login_data['password'].apply(lambda x: len(x) >= 6)
+        self.upload_dataframe_sqldatabase("log_in_data", login_data)
+        print("Log In ETL Process completed\n")
+
+    def etl_faculty(self):
+        print("Starting Faculty ETL Process")
+        faculty_data = self.access_blob_csv("faculties_data.csv")
+        faculty_data['facultyname'] = faculty_data['facultyname'].str.title()
+        self.upload_dataframe_sqldatabase("faculty_data", faculty_data)
+        print("Faculty ETL Process completed\n")
+
+    def etl_book_info(self):
+        print("Starting Book Information ETL Process")
+        book_data = self.access_blob_csv("Books_data - Sheet1.csv")
+        book_data['title'] = book_data['title'].str.title()
+        self.upload_dataframe_sqldatabase("book_info", book_data)
+        print("Book Information ETL Process completed\n")
+
+    def etl_laptop_info(self):
+        print("Starting Laptop Information ETL Process")
+        laptop_data = self.access_blob_csv("laptop_data.csv")
+        laptop_data['name'] = laptop_data['name'].str.title()
+        self.upload_dataframe_sqldatabase("laptop_info", laptop_data)
+        print("Laptop Information ETL Process completed\n")
+
+    def etl_fine_payment(self):
+        print("Starting Fine Payment ETL Process")
+        fine_data = self.access_blob_csv("fine_data.csv")
+        fine_data['amount'] = fine_data['amount'].apply(lambda x: float(x.strip('$')))
+        self.upload_dataframe_sqldatabase("fine_payment", fine_data)
+        print("Fine Payment ETL Process completed\n")
+
+    def etl_transaction_history(self):
+        print("Starting Transaction History ETL Process")
+        transaction_data = self.access_blob_csv("transaction_chart_data.csv")
+        transaction_data['transactionid'] = transaction_data['transactionid'].astype(str)
+        self.upload_dataframe_sqldatabase("transaction_history", transaction_data)
+        print("Transaction History ETL Process completed\n")
+
+    def run_all_etl(self):
+        self.etl_user_id()
+        self.etl_log_in()
+        self.etl_faculty()
+        self.etl_book_info()
+        self.etl_laptop_info()
+        self.etl_fine_payment()
+        self.etl_transaction_history()
+
+
+if __name__ == "__main__":
+    db = AzureDB()
+    db.access_container("unlibrary")
+    db.run_all_etl()
