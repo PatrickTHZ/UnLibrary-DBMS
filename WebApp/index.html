@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./src/fontawesome.all.min.css">
+    <link rel="stylesheet" href="./src/bootstrap.css">
+    <link rel="stylesheet" href="./src/style.css">
+    <title>Book Web App</title>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-xl navbar-dark bg-black">
+            <div class="d-flex justify-content-between align-items-center w-100 p-3 gap-3">
+                <div>
+                    <a class="navbar-brand" href="#">
+                        <img src="./src/images/logo.png" alt="logo" height="35" class="d-inline-block align-text-top">
+                    </a>
+                </div>
+                <div class="d-none d-xl-block">
+                    <a href="#" class="btn btn-dark btn-nav">Home</a>
+                    <a href="#" class="btn btn-dark btn-nav">About</a>
+                </div>
+                <div>
+                    <form class="d-flex form-dark text-white align-items-center">
+                        <label class="position-absolute ms-4"><i class="fa fa-bars"></i></label>
+                        <input class="form-control border-0 bg-dark text-white py-3 px-5 rounded-pill" type="search" placeholder="Search Applications" aria-label="Search">
+                        <button class="btn btn-theme text-white rounded-pill" style="margin-left: -50px;" type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" style="background-color: black;" aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header p-4 p-xl-0">
+                            <a class="navbar-brand" href="#">
+                                <img src="./src/images/logo.png" alt="logo" height="35" class="d-inline-block align-text-top">
+                            </a>
+                            <button type="button" class="btn btn-dark" data-bs-dismiss="offcanvas" aria-label="Close">
+                                <i class="fa fa-close"></i>
+                            </button>
+                        </div>
+                        <div class="offcanvas-body p-4 p-xl-0">
+                            <ul class="navbar-nav d-grid d-xl-flex">
+                                <a href="#" class="btn btn-dark btn-nav d-inline-block d-xl-none">Home</a>
+                                <a href="#" class="btn btn-dark btn-nav d-inline-block d-xl-none">About</a>
+                                <a href="#" class="btn btn-dark btn-nav">Books</a>
+                                <a href="#" class="btn btn-dark btn-nav">Laptops</a>
+                                <a href="#" class="btn btn-dark btn-nav">Fines</a>
+                                <a href="#" class="btn btn-dark btn-nav">Account</a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+
+        <section class="section-image" style="background-image: url('./src/images/hm-img.png');">
+
+            <div class="container text-center py-5">
+                <div class="py-5">
+                    <h1 class="fw-bold">Welcome to UniLibrary</h1>
+                    <p>The all in one library tool!</p>
+                    <div id="cover-carousels" class="d-flex gap-3 align-items-center justify-content-center  my-5">
+                        <div class="col-md-1 clickable" onclick="moveCarousel(-1)">
+                            <span class="">
+                                <i class="fa fa-angle-left fs-2"></i>
+                            </span>
+                        </div>
+                        <div class="book-cover show" style="background-image: url('./src/images/book2.jpg');"></div>
+                        <div class="book-cover show active" style="background-image: url('./src/images/book1.jpg');"></div>
+                        <div class="book-cover show" style="background-image: url('./src/images/book3.jpg');"></div>
+                        <div class="col-md-1 clickable" onclick="moveCarousel(1)">
+                            <span class="">
+                                <i class="fa fa-angle-right fs-2"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="section-image" style="background-image: url('./src/images/hm-img2.png');">
+
+            <div class="container text-center py-5">
+                <div class="py-5">
+                    <h1 class="fw-bold">Borrow a book</h1>
+                    <p>Search for any books to borrow them!</p>
+                    <div class="my-5">
+
+                        <div class="col-md-8 col-xl-5 bg-dark rounded-4 mx-auto overflow-hidden">
+                            <div class="d-flex align-items-center">
+                                <div class="position-absolute ms-3">
+                                    <button class="btn btn-theme btn-dark rounded-pill">
+                                        <i class="fa fa-arrow-left fs-5"></i>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control border-0 bg-dark text-white py-4 px-5 mx-3" placeholder="Enter Title, Author, or srcation Date">
+                            </div>
+                            <div class="text-start border-top border-gray">
+                                <div class="d-flex gap-4 hover-gray p-3">
+                                    <div>
+                                        <img src="./src/images/a-image.png" alt="" height="50">
+                                    </div>
+                                    <div>
+                                        <div class="fs-5">Book Title</div>
+                                        <p class="text-gray">Author, srcation Date</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-4 hover-gray p-3">
+                                    <div>
+                                        <img src="./src/images/a-image.png" alt="" height="50">
+                                    </div>
+                                    <div>
+                                        <div class="fs-5">Book Title</div>
+                                        <p class="text-gray">Author, srcation Date</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-4 hover-gray p-3">
+                                    <div>
+                                        <img src="./src/images/a-image.png" alt="" height="50">
+                                    </div>
+                                    <div>
+                                        <div class="fs-5">Book Title</div>
+                                        <p class="text-gray">Author, srcation Date</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <section class="section-image" style="background-image: url('./src/images/hm-img3.png');">
+
+            <div class="container text-center py-5">
+                <div class="py-5">
+                    <h1 class="fw-bold">Borrow a Laptop</h1>
+                    <p>Select the laptop and borrowing date!</p>
+                    <div class="py-5"></div>
+                    <div class="mx-auto row align-items-start justify-content-center gap-3 my-5">
+                        <div class="col-md-8 col-xl-3 bg-dark rounded-4 overflow-hidden p-4 text-start">
+                            <p class="fs-4">Laptop Code:</p>
+                            <p class="small text-gray">
+                                Welcome, please follow the key to borrowing a laptop. Green means that the laptop is available and ready to be borrowed immediately. Yellow means that the laptop will be available this week. Red means that the laptop is not available within one week.
+                            </p>
+                            <div class="mb-3">
+                                <label class="d-flex align-items-center py-2 border-bottom border-gray">
+                                    <div class="flex-grow-1 d-flex align-items-center gap-3">
+                                        <i class="fa fa-circle text-success fs-2"></i>
+                                        Z47SHDGA6
+                                    </div>
+                                    <div class="checkbox-wrapper-4">
+                                        <input class="inp-cbx" id="checkbox1" type="checkbox"/>
+                                        <label class="cbx" for="checkbox1"><span>
+                                        <svg width="12px" height="10px">
+                                          <use xlink:href="#check-4"></use>
+                                        </svg></label>
+                                        <svg class="inline-svg">
+                                          <symbol id="check-4" viewbox="0 0 12 10">
+                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                          </symbol>
+                                        </svg>
+                                    </div>
+                                </label>
+                                <label class="d-flex align-items-center py-2 border-bottom border-gray">
+                                    <div class="flex-grow-1 d-flex align-items-center gap-3">
+                                        <i class="fa fa-circle text-warning fs-2"></i>
+                                        Z47SHDGA6
+                                    </div>
+                                    <div class="checkbox-wrapper-4">
+                                        <input class="inp-cbx" id="checkbox2" type="checkbox"/>
+                                        <label class="cbx" for="checkbox2"><span>
+                                        <svg width="12px" height="10px">
+                                          <use xlink:href="#check-4"></use>
+                                        </svg></label>
+                                        <svg class="inline-svg">
+                                          <symbol id="check-4" viewbox="0 0 12 10">
+                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                          </symbol>
+                                        </svg>
+                                    </div>
+                                </label>
+                                <label class="d-flex align-items-center py-2 border-bottom border-gray">
+                                    <div class="flex-grow-1 d-flex align-items-center gap-3">
+                                        <i class="fa fa-circle text-danger fs-2"></i>
+                                        Z47SHDGA6
+                                    </div>
+                                    <div class="checkbox-wrapper-4">
+                                        <input class="inp-cbx" id="checkbox3" type="checkbox"/>
+                                        <label class="cbx" for="checkbox3"><span>
+                                        <svg width="12px" height="10px">
+                                          <use xlink:href="#check-4"></use>
+                                        </svg></label>
+                                        <svg class="inline-svg">
+                                          <symbol id="check-4" viewbox="0 0 12 10">
+                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                          </symbol>
+                                        </svg>
+                                    </div>
+                                </label>
+                                <label class="d-flex justify-content-end py-2">
+                                    <div class="checkbox-wrapper-4">
+                                        <input class="inp-cbx" id="checkbox4" type="checkbox"/>
+                                        <label class="cbx" for="checkbox4"><span>
+                                        <svg width="12px" height="10px">
+                                          <use xlink:href="#check-4"></use>
+                                        </svg></label>
+                                        <svg class="inline-svg">
+                                          <symbol id="check-4" viewbox="0 0 12 10">
+                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                          </symbol>
+                                        </svg>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="text-end">
+                                <a href="#" class="btn btn-theme text-theme rounded-pill">Confirm Selection(s)</a>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-xl-3 bg-dark rounded-4 overflow-hidden p-4 text-start mt-4">
+                            <p class="fs-4">Borrowing Process</p>
+                            <p class="small text-gray">
+                                Please enter the following details to borrow a laptop:
+                            </p>
+                            <div class="mb-2">
+                                <a href="#" class="btn btn-theme text-theme rounded-pill">Why do we need this Information?</a>
+                            </div>
+                            <div class="my-3">
+                                <div class="mb-3">
+                                    <div class="theme-input">
+                                        <div class="d-flex gap-2 align-items-center justify-content-between">
+                                            <div>
+                                                <label>Username</label>
+                                                <input class="w-100" type="text" placeholder="Enter Information">
+                                            </div>
+                                            <div>
+                                                <img src="./src/images/close-icon.svg" alt="" height="25">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="text-theme mx-3">e.g. Username</span>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="theme-input">
+                                        <div class="d-flex gap-2 align-items-center justify-content-between">
+                                            <div>
+                                                <label>Full Name</label>
+                                                <input class="w-100" type="text" placeholder="Enter Information">
+                                            </div>
+                                            <div>
+                                                <img src="./src/images/close-icon.svg" alt="" height="25">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="text-theme mx-3">e.g. John Doe</span>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="theme-input">
+                                        <div class="d-flex gap-2 align-items-center justify-content-between">
+                                            <div>
+                                                <label>ID Number</label>
+                                                <input class="w-100" type="text" placeholder="Enter Information">
+                                            </div>
+                                            <div>
+                                                <img src="./src/images/close-icon.svg" alt="" height="25">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="text-theme mx-3">e.g. 123456789</span>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="theme-input">
+                                        <div class="d-flex gap-2 align-items-center justify-content-between">
+                                            <div>
+                                                <label>Laptop Code</label>
+                                                <input class="w-100" type="text" placeholder="Enter Information">
+                                            </div>
+                                            <div>
+                                                <img src="./src/images/close-icon.svg" alt="" height="25">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="text-theme mx-3">e.g. Z6CSGD3</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-xl-3 bg-dark rounded-4 overflow-hidden p-4 text-start mt-5">
+                            <div class="mb-3">
+                                Select Date
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center border-bottom border-gray py-2">
+                                <div class="fs-3">Enter Dates</div>
+                                <div>
+                                    <i class="far fa-calendar-alt text-white fs-5"></i>
+                                </div>
+                            </div>
+                            <div class="my-3 d-flex gap-2 outline-input">
+                                <div class="form-floating ms-auto me-auto w-50 mb-3">
+                                    <input type="date" class="form-control" id="floatingInput" placeholder="mm/dd/yyyy">
+                                    <label for="floatingInput">Date</label>
+                                </div>
+                                <div class="form-floating ms-auto me-auto w-50 mb-3">
+                                    <input type="date" class="form-control" id="floatingInput" placeholder="mm/dd/yyyy">
+                                    <label for="floatingInput">End Date</label>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <a href="#" class="btn btn-theme text-theme rounded-pill">Cancel</a>
+                                <a href="#" class="btn btn-theme text-theme rounded-pill">OK</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="section-image" style="background-image: url('./src/images/hm-img4.png');">
+
+            <div class="container text-center py-5">
+                <div class="py-5">
+                    <h1 class="fw-bold">Fines & Overdue Items</h1>
+                    <p>Calculate the fines and overdues!</p>
+                    <div class="my-5 d-xl-flex justify-content-evenly gap-3">
+                        <div class="col-xl-3 bg-dark rounded-4 overflow-hidden p-4 text-start mb-4">
+                            <p class="fs-4">Overdue Items</p>
+                            <p class="small text-gray">
+                                Here are the following items which have not been returned. Please select items to calculate overdue item fine.
+                            </p>
+                            <div class="text-end mb-3">
+                                <a href="#" class="btn btn-theme text-theme rounded-pill">Need help</a>
+                            </div>
+                            <div>
+                                <label class="d-flex align-items-center py-2">
+                                    <div class="flex-grow-1">
+                                        List item
+                                    </div>
+                                    <div class="checkbox-wrapper-4">
+                                        <input class="inp-cbx" id="checkbox5" type="checkbox"/>
+                                        <label class="cbx" for="checkbox5"><span>
+                                        <svg width="12px" height="10px">
+                                          <use xlink:href="#check-4"></use>
+                                        </svg></label>
+                                        <svg class="inline-svg">
+                                          <symbol id="check-4" viewbox="0 0 12 10">
+                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                          </symbol>
+                                        </svg>
+                                    </div>
+                                </label>
+                                <label class="d-flex align-items-center py-2">
+                                    <div class="flex-grow-1">
+                                        List item
+                                    </div>
+                                    <div class="checkbox-wrapper-4">
+                                        <input class="inp-cbx" id="checkbox6" type="checkbox"/>
+                                        <label class="cbx" for="checkbox6"><span>
+                                        <svg width="12px" height="10px">
+                                          <use xlink:href="#check-4"></use>
+                                        </svg></label>
+                                        <svg class="inline-svg">
+                                          <symbol id="check-4" viewbox="0 0 12 10">
+                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                          </symbol>
+                                        </svg>
+                                    </div>
+                                </label>
+                                <label class="d-flex align-items-center py-2">
+                                    <div class="flex-grow-1">
+                                        List item
+                                    </div>
+                                    <div class="checkbox-wrapper-4">
+                                        <input class="inp-cbx" id="checkbox7" type="checkbox"/>
+                                        <label class="cbx" for="checkbox7"><span>
+                                        <svg width="12px" height="10px">
+                                          <use xlink:href="#check-4"></use>
+                                        </svg></label>
+                                        <svg class="inline-svg">
+                                          <symbol id="check-4" viewbox="0 0 12 10">
+                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                          </symbol>
+                                        </svg>
+                                    </div>
+                                </label>
+                                <label class="d-flex align-items-center py-2">
+                                    <div class="flex-grow-1">
+                                        List item
+                                    </div>
+                                    <div class="checkbox-wrapper-4">
+                                        <input class="inp-cbx" id="checkbox8" type="checkbox"/>
+                                        <label class="cbx" for="checkbox8"><span>
+                                        <svg width="12px" height="10px">
+                                          <use xlink:href="#check-4"></use>
+                                        </svg></label>
+                                        <svg class="inline-svg">
+                                          <symbol id="check-4" viewbox="0 0 12 10">
+                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                          </symbol>
+                                        </svg>
+                                    </div>
+                                </label>
+                                <label class="d-flex align-items-center py-2">
+                                    <div class="flex-grow-1">
+                                        List item
+                                    </div>
+                                    <div class="checkbox-wrapper-4">
+                                        <input class="inp-cbx" id="checkbox9" type="checkbox"/>
+                                        <label class="cbx" for="checkbox9"><span>
+                                        <svg width="12px" height="10px">
+                                          <use xlink:href="#check-4"></use>
+                                        </svg></label>
+                                        <svg class="inline-svg">
+                                          <symbol id="check-4" viewbox="0 0 12 10">
+                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                          </symbol>
+                                        </svg>
+                                    </div>
+                                </label>
+                                <label class="d-flex align-items-center py-2">
+                                    <div class="flex-grow-1">
+                                        List item
+                                    </div>
+                                    <div class="checkbox-wrapper-4">
+                                        <input class="inp-cbx" id="checkbox10" type="checkbox"/>
+                                        <label class="cbx" for="checkbox10"><span>
+                                        <svg width="12px" height="10px">
+                                          <use xlink:href="#check-4"></use>
+                                        </svg></label>
+                                        <svg class="inline-svg">
+                                          <symbol id="check-4" viewbox="0 0 12 10">
+                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                          </symbol>
+                                        </svg>
+                                    </div>
+                                </label>
+                                <label class="d-flex align-items-center py-2">
+                                    <div class="flex-grow-1">
+                                        List item
+                                    </div>
+                                    <div class="checkbox-wrapper-4">
+                                        <input class="inp-cbx" id="checkbox11" type="checkbox"/>
+                                        <label class="cbx" for="checkbox11"><span>
+                                        <svg width="12px" height="10px">
+                                          <use xlink:href="#check-4"></use>
+                                        </svg></label>
+                                        <svg class="inline-svg">
+                                          <symbol id="check-4" viewbox="0 0 12 10">
+                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                          </symbol>
+                                        </svg>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 bg-dark rounded-4 overflow-hidden p-4 text-start">
+                            <p class="fs-4">Final Calculator</p>
+                            <p class="small text-gray">
+                                Clicking the calculate button will display the fine you have incurred depending on the number of overdue items you have selected.
+                            </p>
+                            <div class="py-5 my-5 text-center">
+                                <div class="spinner-border text-theme" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p>Total fine incurred:</p>
+                                <h3 class="text-center">$30.50</h3>
+                                <div class="py-5"></div>
+                            </div>
+                            <div class="text-end">
+                                <a href="#" class="btn btn-theme text-theme rounded-pill">Calculate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="bg-black text-white py-4">
+        <div class="container text-center">
+            Copyright &copy; 2022
+        </div>
+    </footer>
+
+    <script src="./src/fontawesome.all.min.js"></script>
+    <script src="./src/bootstrap.js"></script>
+
+    <script>
+
+        const coverCarousels = document.getElementById("cover-carousels");
+        const bookCovers = coverCarousels.querySelectorAll(".book-cover");
+
+        function moveCarousel(direction) {
+
+            if (direction > 0) {
+
+                const activeCover = [...bookCovers].find(cover => cover.classList.contains("active"));
+                const activeCoverIndex = [...bookCovers].indexOf(activeCover);
+                const nextCover = bookCovers[activeCoverIndex + direction];
+
+                if (nextCover) {
+                    activeCover.classList.remove("active");
+                    nextCover.classList.add("active");
+                }
+
+                
+            } else {
+                
+                const activeCover = [...bookCovers].find(cover => cover.classList.contains("active"));
+                const activeCoverIndex = [...bookCovers].indexOf(activeCover);
+                const nextCover = bookCovers[activeCoverIndex + direction];
+
+                if (nextCover) {
+                    activeCover.classList.remove("active");
+                    nextCover.classList.add("active");
+                }
+
+            }
+
+        }
+
+
+    </script>
+    
+</body>
+</html>
