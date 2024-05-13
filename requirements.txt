@@ -1,0 +1,16 @@
+pandas
+awscli
+boto3
+pyarrow
+pyodbc
+fastapi
+uvicorn[standard]
+pydantic
+azure-storage-blob
+azure-identity
+sqlalchemy
+python-dotenv
+python-jose[cryptography]
+passlib[argon2-cffi]
+argon2-cffi
+python-multipart
