@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author Data Visualization</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Author Table</h2>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Author ID</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                </tr>
+            </thead>
+            <tbody id="authorTable">
+                <!-- Rows will be added here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript to fetch and display data
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('http://127.0.0.1:8000/author') // Replace with your API URL
+                .then(response => response.json())
+                .then(data => {
+                    const table = document.getElementById('authorTable');
+                    data.forEach(author => {
+                        let row = table.insertRow();
+                        let cell1 = row.insertCell(0);
+                        let cell2 = row.insertCell(1);
+                        let cell3 = row.insertCell(2);
+                        cell1.innerHTML = author.AuthorID;
+                        cell2.innerHTML = author.Author_F_Name;
+                        cell3.innerHTML = author.Author_L_Name;
+                    });
+                })
+                .catch(error => console.error('Error loading the data: ', error));
+        });
+    </script>
+</body>
+</html>
