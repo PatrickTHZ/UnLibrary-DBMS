@@ -14,5 +14,7 @@ open the frontend.html file in the same folder in your local machine to view the
 5. enter macOS password and hit return
 6. input ```brew update && brew upgrade``` into terminal and hit return.
 7. run ```brew install python3```
-9. download ```WebApp``` folder and exctract files
-10. open ```index.html``` file with chrome or safari depenidng on device's operating system.
+8. download ```requirements.txt```
+9. run ```pip3 install -r requirements.txt```
+10. download ```WebApp``` folder and exctract files
+11. open ```index.html``` file with chrome or safari depenidng on device's operating system.
